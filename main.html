@@ -10,7 +10,23 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+			 if (arr.length < 2) return -Infinity;
+
+  let max = -Infinity;
+  let second = -Infinity;
+
+  for (let num of arr) {
+    num = Number(num); // convert from prompt string to number
+
+    if (num > max) {
+      second = max;
+      max = num;
+    } else if (num > second && num !== max) {
+      second = num;
+    }
+  }
+
+  return second === -Infinity ? -Infinity : second;
 		}
 
 		function Main() {
